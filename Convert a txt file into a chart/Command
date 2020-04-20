@@ -1,7 +1,5 @@
 #How to create a chart from a txt file
 
-#Such code has been used with the data contained in the file "microarray.original.txt"
-
 dataset_file = open('.......')  # open dataset
 
 first = True
