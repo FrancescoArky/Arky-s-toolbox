@@ -22,5 +22,5 @@ for row in dataset_file:
 dataset = pd.DataFrame(dataset)
 dataset.columns = coulumn_index
 
-X = dataset.iloc[:, 1:]
+X = dataset.iloc[:, 1:] #For the chart X I will take into consideration all of the columns and I will skip the first row
 print(X)
