@@ -1,0 +1,26 @@
+#How to create a chart from a txt file
+
+#Such code has been used with the data contained in the file "microarray.original.txt"
+
+dataset_file = open('.......')  # open dataset
+
+first = True
+dataset = []
+coulumn_index = []
+count = 0
+for row in dataset_file:
+    if first:
+        coulumn_index = row.replace("\n", "").split("\t") 
+        first = False
+        continue
+
+    dataset_row = row.split("\t")
+    dataset_row[1:] = [float(i) for i in dataset_row[1:]]
+    # print(dataset_row)
+    dataset.append(dataset_row)
+
+dataset = pd.DataFrame(dataset)
+dataset.columns = coulumn_index
+
+X = dataset.iloc[:, 1:]
+print(X)
