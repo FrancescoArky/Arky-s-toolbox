@@ -5,15 +5,14 @@ dataset_file = open('.......')  # open dataset
 first = True
 dataset = []
 coulumn_index = []
-count = 0
 for row in dataset_file:
     if first:
         coulumn_index = row.replace("\n", "").split("\t") 
-        first = False
+        first = False #Through this command I will make sure that such command is only done for the first row
         continue
 
     dataset_row = row.split("\t")
-    dataset_row[1:] = [float(i) for i in dataset_row[1:]]
+    dataset_row[1:] = [float(i) for i in dataset_row[1:]] #I have converted in float terms all of the elements 
     # print(dataset_row)
     dataset.append(dataset_row)
 
