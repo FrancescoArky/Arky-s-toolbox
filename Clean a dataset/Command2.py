@@ -59,10 +59,11 @@ for row in file:
         if word in row:
             wordPos = row.find(word)
             wordElemento = row[wordPos:wordPos+len(word)].strip()
-            wordResult = wordResult +  " | " + wordElemento
-            wordExist = True
-    if wordExist:
-        file2.write(hybResult + " " + wordResult + "\n")
+            if wordElemento not in wordResult:
+                wordResult = wordResult + " | " + wordElemento
+                wordExist = True
+        if wordExist:
+            file2.write(hybResult + " " + wordResult + "\n")
     else:
         file2.write(hybResult + " None\n")
     wordResult = ""
